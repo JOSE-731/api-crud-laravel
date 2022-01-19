@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+//Importamos aca para no tener problemas con las migraciones
+use Illuminate\Support\facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        //aca seguimos con la configuracion
+        Schema::defaultStringLength(191);
     }
 
     /**
