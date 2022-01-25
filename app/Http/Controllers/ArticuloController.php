@@ -40,7 +40,7 @@ class ArticuloController extends Controller
     {
         //Obtenemos los datos que se envian 
         $articulo = new Articulo();
-        $articulo->descripcion = $request->descripcion;
+        $articulo->articulo = $request->articulo;
         $articulo->precio = $request->precio;
         $articulo->stock = $request->stock;
 
@@ -84,7 +84,7 @@ class ArticuloController extends Controller
         $articulo = Articulo::findOrFail($request->id);
 
         $articulo = new Articulo();
-        $articulo->descripcion = $request->descripcion;
+        $articulo->articulo = $request->articulo;
         $articulo->precio = $request->precio;
         $articulo->stock = $request->stock;
 
@@ -101,8 +101,10 @@ class ArticuloController extends Controller
      */
     public function destroy(Request $request)
     {
-       $articulo = Articulo::deleted($request->id);
+        $articulo = Articulo::destroy($request->id);
 
-       return $articulo;
+        return response()->json([
+            'menssage' => 'success'
+        ], 204);
     }
 }

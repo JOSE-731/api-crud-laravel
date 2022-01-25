@@ -29,3 +29,18 @@ Route::post('/articulos', [ArticuloController::class,'store']);
 Route::put('/articulos/{id}', [ArticuloController::class,'update']);
 Route::delete('/articulos/{id}', [ArticuloController::class,'destroy']);
 
+/* Ejemplo
+
+get: http://127.0.0.1:8000/api/articulos
+post: http://127.0.0.1:8000/api/articulos
+delete: http://127.0.0.1:8000/api/articulos/1
+
+    {
+        "id": 0,
+        "articulo": "diana arroz v2",
+        "precio": 20033,
+        "stock": 5300,
+        "created_at": null,
+        "updated_at": null
+    }
+*/
